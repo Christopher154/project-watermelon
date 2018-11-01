@@ -11,7 +11,7 @@ export class DataService {
 
   }
 
-  public getCities() {
-    return this.http.get<Course[]>('/api/getcities');
+  public getCourses() {
+    return this.http.get<Course[]>('/api/getcourses');
   }
 }

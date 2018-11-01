@@ -20,7 +20,7 @@ export class ListComponent implements OnInit {
   }
 
   retrieveCourses() {
-    this.data.getCities().subscribe(data => {
+    this.data.getCourses().subscribe(data => {
       this.courses = data
     })
   }
