@@ -24,6 +24,10 @@ export class DetailsComponent implements OnInit {
     });
   }
 
+  ngOnDestroy(): void {
+    this.subCourse.unsubscribe();
+  }
+
   @Input() course: Course;
 
 }

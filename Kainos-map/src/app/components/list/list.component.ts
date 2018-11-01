@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data/data.service';
 import { Course } from '../../classes/course';
+import { SwitchboardService } from 'src/app/switchboard.service';
 
 @Component({
   selector: 'app-list',
@@ -10,6 +11,8 @@ import { Course } from '../../classes/course';
 export class ListComponent implements OnInit {
   courses: Course[];
   data: DataService;
+  switchboard: SwitchboardService
+  thisCourse: Course;
 
   constructor(dataService: DataService) { 
     this.data = dataService
@@ -23,6 +26,11 @@ export class ListComponent implements OnInit {
     this.data.getCourses().subscribe(data => {
       this.courses = data
     })
+  }
+
+  onSelect (newCourse: Course): void {
+    this.thisCourse = newCourse;
+    this.switchboard.switchCourse(this.thisCourse);
   }
 
 }

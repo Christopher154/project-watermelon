@@ -1,6 +1,6 @@
 <div class="list">
   <table>
-    <td ng-repeat="course in courses">
+    <td ng-repeat="course in courses" (click)="onSelect(course)">
       <td>{{ course.title }}</td>
       <td>{{ course.date }}</td>
       <td>{{ course.location }}</td>
