@@ -13,14 +13,15 @@ CREATE TABLE Course (
 
 CREATE TABLE Employee (
 	id int AUTO_INCREMENT PRIMARY KEY,
-	[name] varchar(50) NOT NULL,
+	employee_name varchar(50) NOT NULL,
     email varchar(100) NOT NULL
 );
 
 CREATE TABLE Course_Employee (
-	courseID int PRIMARY KEY,
-	employeeID int PRIMARY KEY,
-    CONSTRAINT FK_courseID FOREIGN KEY (courseID) REFERENCES Course(id),
-    CONSTRAINT FK_employeeID FOREIGN KEY (employeeID) REFERENCES Employee(id)
+	courseID int,
+	employeeID int,
+	CONSTRAINT PK_CourseEmployee PRIMARY KEY(courseID, employeeID), 
+	CONSTRAINT FK_courseID FOREIGN KEY (courseID) REFERENCES Course(id),
+	CONSTRAINT FK_employeeID FOREIGN KEY (employeeID) REFERENCES Employee(id)
 );
 
