@@ -4,7 +4,7 @@ const db = require('./db.js');
 
 courses = [];
 
-app.get('/', function(req, res){
+app.get('/courses', function(req, res){
     updateCourses(function(){
         res.send(courses);
     });
