@@ -10,10 +10,16 @@ CREATE TABLE Course (
     info text NOT NULL
 );
 
-INSERT INTO Course (title, course_date, course_location, info) VALUES 
-("Coaching Foundation",	'2019-04-13', "Belfast", "For those who coach (Snr Associate +)"),
-("Kimble Basics", '2019-07-30', "Derry-Londonderry", "the basics of kimble"),
-("Performance Testing; Introduction to jmeter", '2019-01-15', "Belfast", "jmeter introduction"),
-("Crucial Conversations", '2018-12-04', "Gdansk", "For people managers - conversations that are crucial"),
-("Kimble Advanced", '2019-08-25', "Derry-Londonderry", "the advanced teachings of kimble"),
-("Kimble Basics", '2019-07-11', "London", "the basics of kimble")
+CREATE TABLE Employee (
+	id int AUTO_INCREMENT PRIMARY KEY,
+	[name] varchar(50) NOT NULL,
+    email varchar(100) NOT NULL
+);
+
+CREATE TABLE Course_Employee (
+	courseID int AUTO_INCREMENT PRIMARY KEY,
+	employeeID int PRIMARY KEY,
+    CONSTRAINT FK_courseID FOREIGN KEY (courseID) REFERENCES Course(id),
+    CONSTRAINT FK_employeeID FOREIGN KEY (employeeID) REFERENCES Employee(id)
+);
+
