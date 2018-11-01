@@ -2,7 +2,7 @@ const mysql = require('mysql');
 
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'course_admin', 
+    user: 'conor', 
     password: 'password',
     database: 'courses'
 });
@@ -21,3 +21,10 @@ exports.getCoursesInCourse = function(callback){
         }
     );
 }
+
+exports.addEmployee = function(data){
+    db.query('INSERT INTO Employees (name, email) VALUES (?)', data, function(error, results, fields){
+        if(err) throw error;
+        console.log();
+    })
+};

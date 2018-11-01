@@ -7,7 +7,8 @@ CREATE TABLE Course (
 	title varchar(100) NOT NULL,
     course_date date NOT NULL,
     course_location varchar(25),
-    info text NOT NULL
+    info text NOT NULL,
+    attendees int DEFAULT 0
 );
 
 CREATE TABLE Employee (
@@ -17,7 +18,7 @@ CREATE TABLE Employee (
 );
 
 CREATE TABLE Course_Employee (
-	courseID int AUTO_INCREMENT PRIMARY KEY,
+	courseID int PRIMARY KEY,
 	employeeID int PRIMARY KEY,
     CONSTRAINT FK_courseID FOREIGN KEY (courseID) REFERENCES Course(id),
     CONSTRAINT FK_employeeID FOREIGN KEY (employeeID) REFERENCES Employee(id)

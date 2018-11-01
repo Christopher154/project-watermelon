@@ -8,7 +8,12 @@ app.get('/courses', function(req, res){
     updateCourses(function(){
         res.send(courses);
     });
-    console.log('Request Processed');
+    console.log('GET courses request processed');
+});
+
+app.post('/employee', function(req, res){
+    db.addEmployee(req.body)
+    console.log('POST employee request processed');
 });
 
 app.listen(7999, function(){
