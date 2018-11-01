@@ -1,7 +1,7 @@
 export class Course {
     id: number;
     title: string;
-    date: Date;
-    location: string;
+    course_date: Date;
+    course_location: string;
     info: string
 }
