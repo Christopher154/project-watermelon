@@ -14,8 +14,9 @@ export class ListComponent implements OnInit {
   switchboard: SwitchboardService
   thisCourse: Course;
 
-  constructor(dataService: DataService) { 
-    this.data = dataService
+  constructor(dataService: DataService, switchboard: SwitchboardService) { 
+    this.data = dataService;
+    this.switchboard = switchboard;
   }
 
   ngOnInit() {
@@ -23,12 +24,14 @@ export class ListComponent implements OnInit {
   }
 
   retrieveCourses() {
-    this.data.getCourses().subscribe(data => {
-      this.courses = data
+    this.data.getCourses().subscribe((data)=> {
+      this.courses = data;
+      console.log(this.courses)
     })
   }
 
   onSelect (newCourse: Course): void {
+    console.log(this.thisCourse);
     this.thisCourse = newCourse;
     this.switchboard.switchCourse(this.thisCourse);
   }
