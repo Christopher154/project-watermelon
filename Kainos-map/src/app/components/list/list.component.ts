@@ -26,12 +26,10 @@ export class ListComponent implements OnInit {
   retrieveCourses() {
     this.data.getCourses().subscribe((data)=> {
       this.courses = data;
-      console.log(this.courses)
     })
   }
 
   onSelect (newCourse: Course): void {
-    console.log(this.thisCourse);
     this.thisCourse = newCourse;
     this.switchboard.switchCourse(this.thisCourse);
   }
