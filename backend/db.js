@@ -14,7 +14,7 @@ db.connect(function(err){
 
 exports.getCoursesInCourse = function(callback){
     db.query(
-        "SELECT * FROM Course ORDER BY title, course_date",
+        "SELECT * FROM Course ORDER BY course_date, title",
         function(err, rows){
             if(err) throw err;
             callback(rows);
