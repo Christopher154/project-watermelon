@@ -1,5 +1,9 @@
-<div class="list" >
-  <table>
+<section id="header">
+  <img src="../../../assets/logo.png" id="logo">
+</section>
+
+<div class="container" >
+  <table class="table">
     <tr>
       <th>Title</th>
       <th>Date</th>
@@ -7,7 +11,7 @@
     </tr>
     <tr *ngFor="let course of courses" app-table-row (click)="onSelect(course)">
       <td>{{ course.title }}</td>
-      <td>{{ course.course_date }}</td>
+      <td>{{ course.course_date | date: 'dd LLLL yyyy' }}</td>
       <td>{{ course.course_location }}</td>
     </tr>
   </table>
