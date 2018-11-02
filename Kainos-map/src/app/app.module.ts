@@ -8,7 +8,6 @@ import { DetailsComponent } from './components/details/details.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbdModalBasic } from './components/modal/modal.component';
 import { CourseComponent } from './components/course/course.component'
 
 @NgModule({
@@ -17,7 +16,6 @@ import { CourseComponent } from './components/course/course.component'
     ListComponent,
     DetailsComponent,
     HomeComponent,
-    NgbdModalBasic,
     CourseComponent
   ],
   imports: [
