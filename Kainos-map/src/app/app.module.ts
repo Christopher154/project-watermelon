@@ -7,18 +7,24 @@ import { ListComponent } from './components/list/list.component';
 import { DetailsComponent } from './components/details/details.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbdModalBasic } from './components/modal/modal.component';
+import { CourseComponent } from './components/course/course.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     DetailsComponent,
-    HomeComponent
+    HomeComponent,
+    NgbdModalBasic,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

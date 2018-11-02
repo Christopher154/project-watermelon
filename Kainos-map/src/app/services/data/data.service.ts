@@ -16,4 +16,8 @@ export class DataService {
   public getCourses() {
     return this.http.get<Course[]>('/api/courses');
   }
+
+  public getCourseById(id) {
+    return this.http.get<Course>('/api/courses/' + id)
+  }
 }

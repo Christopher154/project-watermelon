@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data/data.service';
 import { Course } from '../../classes/course';
 import { SwitchboardService } from 'src/app/switchboard.service';
+import { Router } from '@angular/router';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'app-list',
@@ -14,7 +16,7 @@ export class ListComponent implements OnInit {
   switchboard: SwitchboardService
   thisCourse: Course;
 
-  constructor(dataService: DataService, switchboard: SwitchboardService) { 
+  constructor(dataService: DataService, switchboard: SwitchboardService,private router: Router) { 
     this.data = dataService;
     this.switchboard = switchboard;
   }
@@ -32,6 +34,8 @@ export class ListComponent implements OnInit {
   onSelect (newCourse: Course): void {
     this.thisCourse = newCourse;
     this.switchboard.switchCourse(this.thisCourse);
+    console.log('ABout to navigate')
+    this.router.navigate([`/course/${newCourse.id}`])
   }
 
 }

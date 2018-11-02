@@ -11,6 +11,13 @@ app.get('/courses', function(req, res){
     console.log('Request Processed');
 });
 
+app.get('/courses/:id', (req, res) => {
+    db.getCourseById(req.params.id, (course) => {
+        console.log(course)
+        res.send(course)
+    })
+})
+
 app.listen(7999, function(){
     console.log('Express Started');
 });
