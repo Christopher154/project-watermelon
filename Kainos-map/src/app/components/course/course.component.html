@@ -1,12 +1,3 @@
-
-<!-- <h1 id="courseName">{{ course[0].title }}</h1>
-<ul> 
-  <li id="courseDate">Date:     {{ course[0].course_date }}</li>
-  <li id="courseLocation">Location: {{ course[0].course_location }}</li>
-  <li id="courseDetails">Details:  {{ course[0].info }}</li>
-</ul> -->
-
-
 <section id="header">
   <img src="../../../assets/logo.png" id="logo">
 </section>
@@ -29,6 +20,21 @@
     <tr>
       <td class="bold">Location</td>
       <td>{{ course[0].course_location }}</td>
+    </tr>
+    
+     <tr>
+      <td class="bold">Trainer name</td>
+      <td>{{ course[0].trainer_name }}</td>
+    </tr>
+
+    <tr>
+      <td class="bold">Who should attend</td>
+      <td>{{ course[0].audience }}</td>
+    </tr>
+
+    <tr>
+      <td class="bold">Duration</td>
+      <td>{{ course[0].duration }}</td>
     </tr>
 
   </table>
