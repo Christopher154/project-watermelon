@@ -1,0 +1,35 @@
+
+<!-- <h1 id="courseName">{{ course[0].title }}</h1>
+<ul> 
+  <li id="courseDate">Date:     {{ course[0].course_date }}</li>
+  <li id="courseLocation">Location: {{ course[0].course_location }}</li>
+  <li id="courseDetails">Details:  {{ course[0].info }}</li>
+</ul> -->
+
+
+<section id="header">
+  <img src="../../../assets/logo.png" id="logo">
+</section>
+
+<h1 id="heading">{{ course[0].title }}</h1>
+
+<div class="container" >
+  <table class="table">
+    
+    <tr>
+      <td class="bold">Details</td>
+      <td>{{ course[0].info }}</td>
+    </tr>
+
+    <tr>
+      <td class="bold">Date</td>
+      <td>{{ course[0].course_date | date: 'dd LLL yyyy' }}</td>
+    </tr>
+
+    <tr>
+      <td class="bold">Location</td>
+      <td>{{ course[0].course_location }}</td>
+    </tr>
+
+  </table>
+</div>
