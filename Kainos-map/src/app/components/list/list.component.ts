@@ -12,7 +12,8 @@ export class ListComponent implements OnInit {
   data: DataService;
 
   constructor(dataService: DataService) { 
-    this.data = dataService
+    this.data = dataService;
+    
   }
 
   ngOnInit() {
@@ -20,8 +21,9 @@ export class ListComponent implements OnInit {
   }
 
   retrieveCourses() {
-    this.data.getCourses().subscribe(data => {
-      this.courses = data
+    this.data.getCourses().subscribe((data)=> {
+      this.courses = data;
+      console.log(this.courses)
     })
   }
 
