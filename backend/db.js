@@ -2,7 +2,7 @@ const mysql = require('mysql');
 
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'chris', 
+    user: 'course_admin', 
     password: 'password',
     database: 'courses'
 });
@@ -14,7 +14,7 @@ db.connect(function(err){
 
 exports.getCoursesInCourse = function(callback){
     db.query(
-        "SELECT * FROM Course",
+        "SELECT * FROM Course ORDER BY course_date, title",
         function(err, rows){
             if(err) throw err;
             callback(rows);
